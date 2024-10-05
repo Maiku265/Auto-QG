@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whimsical Question Generator</title>
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png"/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="top-area">
+        <div class="header-area">  
+            <nav class="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" href="index.html">Whimsical QG</a>
+                    </div>
+                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="scroll active"><a href="#home">Home</a></li>
+                            <li class="scroll"><a href="#about">About</a></li>
+                            <li class="scroll"><a href="#faq">FAQ</a></li>
+                            <li class="scroll"><a href="#contact">Contact</a></li>
+                            <li>
+                                <button id="sign-in-up" class="btn btn-default navbar-btn" title="Sign In/Up">
+                                    <i class="fa fa-user"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <button id="dark-mode-toggle" class="btn btn-default navbar-btn navbar-right round-btn">
+                        <i class="fa fa-moon-o"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="home" class="question-container">
+            <h1>Whimsical Question Generator</h1>
+            <label for="subject">Choose a subject:</label>
+            <select id="subject">
+                <option value="physics">Physics</option>
+                <option value="food">Food</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="random">Random</option>
+            </select>
+            <div class="button-group">
+                <button id="generate-question">Generate Question</button>
+                <button id="reset-button">Reset</button>
+            </div>
+            <div id="question-display" class="hidden">
+                <div id="generated-question" class="generated-question"></div>
+                <button id="reveal-answer" class="hidden">Reveal Answer</button>
+            </div>
+            <div id="progress-indicator" class="progress-indicator hidden"></div>
+        </div>
+
+        <!-- Answer Modal -->
+        <div id="answer-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Answer</h2>
+                <div id="answer-text"></div>
+                <button class="close-button">Close</button>
+            </div>
+        </div>
+
+        <!-- Sign In/Up Modal -->
+        <div id="signin-modal" class="modal hidden">
+            <div class="modal-content">
+                <h1>Login</h1>
+                <form id="loginForm">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <button type="submit">Log In</button>
+                </form>
+                <div class="links">
+                    <a href="#" id="createAccount">Create Account</a>
+                    <a href="#" id="forgotPassword">Forgot Password</a>
+                </div>
+                <button class="close-button">Close</button>
+            </div>
+        </div>
+
+        <div id="about" class="info-section">
+            <h2>About</h2>
+            <p>This web application is designed to generate whimsical questions across various subjects, allowing users to engage in fun learning experiences.</p>
+        </div>
+
+        <div id="faq" class="info-section">
+            <h2>FAQ</h2>
+            <p><strong>Q: How does the question generator work?</strong></p>
+            <p>A: It randomly selects a question based on the chosen subject.</p>
+        </div>
+        
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/weird me/script.js"></script>
+</body>
+</html>
